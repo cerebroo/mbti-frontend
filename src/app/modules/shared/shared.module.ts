@@ -1,8 +1,15 @@
-import {NgModule, Optional, SkipSelf} from '@angular/core';
+import {NgModule} from '@angular/core';
+import {SizeBucketDirective} from './directives/size-bucket.directive';
 
 
 @NgModule({
+  declarations: [
+    SizeBucketDirective
+  ],
   imports: [
+  ],
+  exports: [
+    SizeBucketDirective
   ]
 })
 export class SharedModule {

@@ -1,0 +1,7 @@
+@import "../sass/mixins/flex-mixins";
+
+.flex-test {
+  background: red;
+  @include fx-layout();
+  @include fx-layout(column, xs, sm);
+}
