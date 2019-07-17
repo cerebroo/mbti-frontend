@@ -1,5 +1,5 @@
 import {Directive, ElementRef, HostListener, Renderer2} from '@angular/core';
-import {SizeBucket} from '../models/size-bucket.enum';
+import {SizeBucket} from './size-bucket.enum';
 
 
 @Directive({selector: '[mbSetSizeBucket]'})

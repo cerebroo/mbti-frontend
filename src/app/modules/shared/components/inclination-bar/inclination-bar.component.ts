@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {Inclination} from '../../models/inclination.enum';
+import {Inclination} from './inclination';
 
 @Component({
   selector: 'mb-inclination-bar',

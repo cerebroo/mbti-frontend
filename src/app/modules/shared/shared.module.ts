@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {SizeBucketDirective} from './directives/size-bucket.directive';
+import {SizeBucketDirective} from './directives/size-bucket/size-bucket.directive';
 import {RatingComponent} from './components/rating/rating.component';
 import {ToArrayPipe} from './pipes/to-array.pipe';
 import {MaterialModule} from '../material.module';
