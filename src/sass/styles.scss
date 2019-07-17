@@ -2,17 +2,17 @@
 
 @import "./theme";
 
-.alert .mat-simple-snackbar {
+.mb-alert .mat-simple-snackbar {
   justify-content: center;
 }
 
-.alert-success {
+.mb-alert-success {
   background-color: #dff0d8;
   border-color: #d0e9c6;
   color: #3c763d;
 }
 
-.alert-error {
+.mb-alert-error {
   background-color: #f2dede;
   border-color: #ebcccc;
   color: #a94442;

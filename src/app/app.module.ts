@@ -7,10 +7,17 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './modules/material.module';
 import {CoreModule} from './modules/core/core.module';
 import {SharedModule} from './modules/shared/shared.module';
+import {SurveyComponent} from './modules/app/components/survey/survey.component';
+import {ResultComponent} from './modules/app/components/result/result.component';
+import {NotFoundComponent} from './modules/app/components/not-found/not-found.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SurveyComponent,
+    ResultComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,7 +25,9 @@ import {SharedModule} from './modules/shared/shared.module';
     AppRoutingModule,
     MaterialModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

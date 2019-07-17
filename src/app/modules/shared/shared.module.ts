@@ -5,10 +5,12 @@ import {ToArrayPipe} from './pipes/to-array.pipe';
 import {MaterialModule} from '../material.module';
 import {CommonModule} from '@angular/common';
 import { InclinationBarComponent } from './components/inclination-bar/inclination-bar.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 const components = [
   RatingComponent,
-  InclinationBarComponent
+  InclinationBarComponent,
+  SpinnerComponent
 ];
 
 const directives = [

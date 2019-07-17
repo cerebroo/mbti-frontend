@@ -11,7 +11,7 @@ export class AlertService {
       duration,
       horizontalPosition: 'center',
       verticalPosition: 'top',
-      panelClass: ['alert', 'alert-success']
+      panelClass: ['mb-alert', 'mb-alert-success']
     } as MatSnackBarConfig);
   }
 
@@ -20,7 +20,7 @@ export class AlertService {
       // duration,
       horizontalPosition: 'center',
       verticalPosition: 'top',
-      panelClass: ['alert', 'alert-error']
+      panelClass: ['mb-alert', 'mb-alert-error']
     } as MatSnackBarConfig);
   }
 }

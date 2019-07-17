@@ -1,1 +1,18 @@
-<p>survey works!</p>
+<div class="container" *ngIf="!loading">
+  <div class="header">
+    <h1>Discover Your Perspective</h1>
+    <span>Complete the 7 min test and get a detailed report of your lenses on the world</span>
+  </div>
+
+  <form [formGroup]="form" class="survey-form" (ngSubmit)="submit()">
+    <mb-rating class="survey-element" *ngFor="let question of  questions" [title]="question.question"></mb-rating>
+    <div class="email-container survey-element last">
+      <span>Your Email</span>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="you@example.com">
+      </mat-form-field>
+    </div>
+    <button class="submit-btn" type="submit" mat-raised-button [disabled]="submitting" color="primary">Submit & Continue</button>
+  </form>
+</div>
+<mb-spinner *ngIf="loading || submitting"></mb-spinner>

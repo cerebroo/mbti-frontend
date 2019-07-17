@@ -1,0 +1,44 @@
+@import "../../../../../sass/mixins/flex-mixins";
+
+.container {
+  @include fx-layout-with-gap(column, 30px);
+  @include fx-layout-alignment(flex-start, center);
+  padding-bottom: 100px;
+}
+
+.header {
+  @include fx-layout-with-gap(column, 5px);
+  @include fx-layout-alignment(center, flex-start);
+  align-self: flex-start;
+}
+
+.survey-form {
+  @include fx-layout(column);
+  @include fx-layout-alignment(flex-start, stretch);
+  width: 100%;
+  max-width: 800px;
+}
+
+.survey-element {
+  padding: 20px 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+
+  &:not(.last) {
+    border-bottom: none;
+  }
+}
+
+.email-container {
+  @include fx-layout(column);
+  @include fx-layout-alignment(flex-start, center);
+
+  mat-form-field {
+    width: 50%;
+  }
+}
+
+.submit-btn {
+  align-self: center;
+  margin-top: 20px;
+}
