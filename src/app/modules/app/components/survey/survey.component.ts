@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {SurveyService} from '../../../core/services/survey.service';
 import {AlertService} from '../../../core/services/alert.service';
 import {Question} from '../../../core/models/question.model';
@@ -8,7 +8,8 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'mb-survey',
   templateUrl: './survey.component.html',
-  styleUrls: ['./survey.component.scss']
+  styleUrls: ['./survey.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SurveyComponent implements OnInit {
 
@@ -23,7 +24,10 @@ export class SurveyComponent implements OnInit {
     return this.questions.every(q => this.answered(q.id));
   }
 
-  constructor(private surveyService: SurveyService, private alertService: AlertService, private router: Router) {
+  constructor(private surveyService: SurveyService,
+              private alertService: AlertService,
+              private router: Router,
+              private cd: ChangeDetectorRef) {
     this.form = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email])
     });
@@ -35,11 +39,13 @@ export class SurveyComponent implements OnInit {
       next: questions => {
         this.loading = false;
         this.questions = questions;
+        this.cd.markForCheck();
       },
       error: error => {
         console.error(error);
         this.loading = false;
         this.alertService.error('Something went wrong! Will do better error handling later :)');
+        this.cd.markForCheck();
       }
     });
   }
@@ -72,11 +78,13 @@ export class SurveyComponent implements OnInit {
         sessionStorage.setItem(response.token, JSON.stringify(response));
         this.submitting = false;
         this.router.navigate(['result', response.token]);
+        this.cd.markForCheck();
       },
       error: error => {
         console.error(error);
         this.submitting = false;
-        this.alertService.error('Something went wrong! Will do better error handling later :)'); // need better error handling, if we have more time.
+        this.alertService.error('Something went wrong! Will do better error handling later :)');
+        this.cd.markForCheck();
       }
     });
   }

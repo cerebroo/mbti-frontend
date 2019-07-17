@@ -7,7 +7,7 @@
     @each $size in $sizes {
       $selectors: join(
           $selectors,
-          unquote(".#{$size} & "),
+          unquote(":host-context(.#{$size}) &, .#{$size} & "),
           comma
       );
     }

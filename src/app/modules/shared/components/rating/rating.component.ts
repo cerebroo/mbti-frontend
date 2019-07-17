@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 import {MatRadioChange} from '@angular/material';
 
 @Component({
   selector: 'mb-rating',
   templateUrl: './rating.component.html',
-  styleUrls: ['./rating.component.scss']
+  styleUrls: ['./rating.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RatingComponent {
 
