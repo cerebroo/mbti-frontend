@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - npm install -g @angular/cli
+    runtime-versions:
+      nodejs: 10
+  build:
+    commands:
+      - npm install
+      - ng build --prod --configuration=${BUILD_CONFIGURATION}
+  post_build:
+    commands:
+      - aws s3 cp dist s3://${S3_BUCKET} --recursive
+      - # aws configure set preview.cloudfront true
+      - # aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths '/*'
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'dist*'
+  discard-paths: yes
