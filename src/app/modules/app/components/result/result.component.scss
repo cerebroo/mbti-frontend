@@ -1,14 +1,16 @@
 @import "../../../../../sass/mixins/flex-mixins";
 
 .container {
-  @include fx-layout();
+  @include fx-layout(row, md, lg, xs);
+  @include fx-layout(column, xs, sm);
+  width: 100%;
   border: 1px solid #eee;
   border-radius: 5px;
   padding: 20px;
 }
 
 .divide {
-  @include fx-flex--gsb(1, 1, 0);
+  @include fx-flex--gsb(1, 1, 0, md, lg, xs);
 }
 
 .result-grid {

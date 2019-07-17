@@ -1,3 +1,7 @@
+@import "../sass/mixins/flex-mixins";
+
 .container {
-  padding: 50px;
+  @include only-for-screen-sizes(md, lg, xl) {
+    padding: 50px;
+  }
 }
