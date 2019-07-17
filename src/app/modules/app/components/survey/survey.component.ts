@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {SurveyService} from '../../../core/services/survey.service';
+import {AlertService} from '../../../core/services/alert.service';
 
 @Component({
   selector: 'mb-survey',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private surveyService: SurveyService, private alertService: AlertService) { }
 
   ngOnInit() {
+    this.surveyService.getQuestions().subscribe(questions => {
+      this.alertService.success('questions fetched successfully');
+      console.log(questions);
+    });
   }
-
 }
