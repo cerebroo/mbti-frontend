@@ -5,11 +5,14 @@
   </div>
 
   <form [formGroup]="form" class="survey-form" (ngSubmit)="submit()">
-    <mb-rating class="survey-element" *ngFor="let question of  questions" [title]="question.question"></mb-rating>
+    <mb-rating class="survey-element" *ngFor="let q of  questions" [title]="q.question"
+               (valueChange)="onAnswer(q.id, $event)" [class.error]="submissionAttempted && !answered(q.id)">
+    </mb-rating>
     <div class="email-container survey-element last">
       <span>Your Email</span>
       <mat-form-field appearance="outline">
-        <input matInput placeholder="you@example.com">
+        <input formControlName="email" matInput placeholder="you@example.com">
+        <mat-error>A valid email id is required.</mat-error>
       </mat-form-field>
     </div>
     <button class="submit-btn" type="submit" mat-raised-button [disabled]="submitting" color="primary">Submit & Continue</button>

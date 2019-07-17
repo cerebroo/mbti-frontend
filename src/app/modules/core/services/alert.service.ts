@@ -17,7 +17,7 @@ export class AlertService {
 
   error(message: string, duration = 3500) {
     this.snackBar.open(message, '', {
-      // duration,
+      duration,
       horizontalPosition: 'center',
       verticalPosition: 'top',
       panelClass: ['mb-alert', 'mb-alert-error']

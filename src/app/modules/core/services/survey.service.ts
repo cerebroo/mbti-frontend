@@ -12,9 +12,8 @@ export class SurveyService {
     return of(dummyQuestionsArray).pipe(delay(1000));
   }
 
-  // Todo: implement this method.
-  submit(): Observable<any> {
-    return of({}).pipe(delay(1000));
+  submit(data: { responses: {[questionId: number]: number}, email: string }): Observable<any> {
+    return of(dummyResult).pipe(delay(1000));
   }
 
   getResult(token: string): Observable<SurveyResult> {

@@ -4,6 +4,8 @@ import {ActivatedRoute} from '@angular/router';
 import {map, switchMap} from 'rxjs/internal/operators';
 import {SurveyResult} from '../../../core/models/survey-result.model';
 import {Inclination} from '../../../shared/components/inclination-bar/inclination';
+import {of} from 'rxjs/index';
+import {AlertService} from '../../../core/services/alert.service';
 
 @Component({
   selector: 'mb-result',
@@ -36,22 +38,28 @@ export class ResultComponent implements OnInit {
     return this.result.conclusion.JP === 'P' ? 'right' : 'left';
   }
 
-  constructor(private surveyService: SurveyService, private route: ActivatedRoute) {
+  constructor(private surveyService: SurveyService, private route: ActivatedRoute, private alertService: AlertService) {
   }
 
   ngOnInit() {
     this.loading = true;
     this.route.params.pipe(map(p => p.token), switchMap(token => {
-      console.log('Token is ' + token);
+      const data = sessionStorage.getItem(token);
+      if (data) {
+        return of(JSON.parse(data));
+      }
       return this.surveyService.getResult(token);
-    })).subscribe(result => {
-      console.log('Result is ', result);
-      this.loading = false;
-      this.result = result; // Todo: check why webstorm (tsling) giving error here but tslint during ng serve working fine
+    })).subscribe({
+      next: result => {
+        console.log('Result is ', result);
+        this.loading = false;
+        this.result = result; // Todo: check why webstorm giving error here but tslint during ng serve working fine
+      },
+      error: error => {
+        console.error(error);
+        this.loading = false;
+        this.alertService.error('Something went wrong! Will do better error handling later :)');
+      }
     });
-  }
-
-  getEIPerspective() {
-
   }
 }

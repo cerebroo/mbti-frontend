@@ -24,8 +24,13 @@
   border: 1px solid #eee;
   border-radius: 5px;
 
-  &:not(.last) {
+  &:not(.last):not(.error) {
     border-bottom: none;
+  }
+
+  &.error {
+    border-color: red;
+    border-width: 2px;
   }
 }
 
