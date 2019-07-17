@@ -11,7 +11,7 @@ export class SizeBucketDirective {
     this.configureSizeBucket();
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   configureSizeBucket() {
     const sizeBucket = this.getSizeBucket();
 
