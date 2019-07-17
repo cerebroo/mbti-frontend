@@ -2,11 +2,13 @@ import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {SurveyService} from './services/survey.service';
 import {AlertService} from './services/alert.service';
 import {MaterialModule} from '../material.module';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
   imports: [
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [
     AlertService,
