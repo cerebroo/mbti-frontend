@@ -1,8 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div mbSetSizeBucket>
-  <div class="flex-test">
-    <button mat-raised-button color="primary">Primary Button</button>
-    <button mat-raised-button color="accent">Accent Button</button>
-  </div>
+  <mb-rating title="How is your experience with angular?" (valueChange)="onRatingChange($event)"
+             [value]="5" [max]="10"></mb-rating>
   <router-outlet></router-outlet>
 </div>

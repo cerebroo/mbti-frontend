@@ -1,0 +1,21 @@
+@import "../../../../../sass/mixins/flex-mixins";
+
+.rating-container {
+  @include fx-layout-with-gap(column, 20px);
+  @include fx-layout-alignment(center, center);
+
+  .rating-bar {
+    @include fx-layout-with-gap(row, 10px);
+    @include fx-layout-alignment(center, center);
+
+    .rating-prefix {
+      color: red;
+    }
+
+    .rating-suffix {
+      color: green;
+      margin-left: -10px;
+    }
+  }
+}
+

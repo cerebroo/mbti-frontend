@@ -1,0 +1,14 @@
+<div [attr.disabled]="disabled" class="rating-container">
+
+  <span class="rating-title">
+    {{title}}
+  </span>
+
+  <div class="rating-bar">
+    <span class="rating-prefix">{{prefix}}</span>
+    <mat-radio-group class="rating-group" aria-label="Select an option" (change)="onChange($event)" [value]="value" [disabled]="disabled">
+      <mat-radio-button class="rating" *ngFor="let i of max|toArray:1" [value]="i"></mat-radio-button>
+    </mat-radio-group>
+    <span class="rating-suffix">{{suffix}}</span>
+  </div>
+</div>
