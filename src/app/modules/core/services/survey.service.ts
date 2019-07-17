@@ -15,14 +15,14 @@ export class SurveyService {
   }
 
   getQuestions(): Observable<Question[]> {
-    return this.http.get(this.baseUrl + '/questions').pipe(map(response => response.data));
+    return this.http.get<{data: Question[]}>(this.baseUrl + '/questions').pipe(map(response => response.data));
   }
 
-  submit(data: { responses: { [questionId: number]: number }, email: string }): Observable<any> {
-    return this.http.post(this.baseUrl + '/submit', data).pipe(map(response => response.data));
+  submit(data: { responses: { [questionId: number]: number }, email: string }): Observable<SurveyResult> {
+    return this.http.post<{data: SurveyResult}>(this.baseUrl + '/submit', data).pipe(map(response => response.data));
   }
 
   getResult(token: string): Observable<SurveyResult> {
-    return this.http.get(this.baseUrl + '/submissions/' + token).pipe(map(response => response.data));
+    return this.http.get<{data: SurveyResult}>(this.baseUrl + '/submissions/' + token).pipe(map(response => response.data));
   }
 }
