@@ -11,7 +11,7 @@ const routes: Routes = [
     component: SurveyComponent,
   },
   {
-    path: 'result/:id',
+    path: 'result/:token',
     component: ResultComponent,
   },
   {

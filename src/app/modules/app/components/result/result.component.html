@@ -1,1 +1,25 @@
-<p>result works!</p>
+<div class="container " *ngIf="!loading">
+  <div class="divide">
+    <h1>Your Perspective</h1>
+    <span>Your Perspective Type is {{perspectiveType}}</span>
+  </div>
+  <div class="divide">
+    <div class="result-grid">
+      <span>Introversion (I)</span>
+      <mb-inclination-bar [inclination]="eiPerspective"></mb-inclination-bar>
+      <span>Extraversion (E)</span>
+
+      <span>Sensing (S)</span>
+      <mb-inclination-bar [inclination]="snPerspective"></mb-inclination-bar>
+      <span>Intuition (N)</span>
+
+      <span>Thinking (T)</span>
+      <mb-inclination-bar [inclination]="tfPerspective"></mb-inclination-bar>
+      <span>Feeling (F)</span>
+
+      <span>Judging (J)</span>
+      <mb-inclination-bar [inclination]="jpPerspective"></mb-inclination-bar>
+      <span>Perceiving (P)</span>
+    </div>
+  </div>
+</div>

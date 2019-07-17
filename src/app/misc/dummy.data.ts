@@ -1,6 +1,7 @@
 import {Question} from '../modules/core/models/question.model';
+import {SurveyResult} from '../modules/core/models/survey-result.model';
 
-export const questionsArray: Question[] = [
+export const dummyQuestionsArray: Question[] = [
   {
     id: 1,
     question: 'You consider yourself more practical than creative',
@@ -32,3 +33,14 @@ export const questionsArray: Question[] = [
     sort_order: 5,
   },
 ];
+
+export const dummyResult: SurveyResult = {
+  token: 'qwerty123',
+  conclusion: {
+    EI: 'E',
+    SN: 'S',
+    TF: 'T',
+    JP: 'J'
+  },
+  created_at: '2019/07/17 16:25:53'
+};

@@ -1,0 +1,20 @@
+@import "../../../../../sass/mixins/flex-mixins";
+
+.container {
+  @include fx-layout();
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.divide {
+  @include fx-flex--gsb(1, 1, 0);
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+  align-items: center;
+}
