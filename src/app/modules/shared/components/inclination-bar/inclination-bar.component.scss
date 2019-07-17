@@ -1,0 +1,36 @@
+@import "../../../../../sass/mixins/flex-mixins";
+@import "../../../../../sass/variables/theme";
+@import '~@angular/material/theming';
+
+:host {
+  display: block;
+  min-width: 200px;
+}
+
+.inclination-bar {
+  @include fx-layout();
+  @include fx-layout-alignment(center, center);
+  width: 100%;
+}
+
+.segment {
+  flex: 1 1 auto;
+  background-color: #eee;
+  height: 10px;
+}
+
+.segment.left {
+  border-radius: 3px 0 0 3px;
+  margin-left: 10px;
+}
+
+
+.segment.right {
+  border-radius: 0 3px 3px 0;
+  margin-right: 10px;
+}
+
+.segment.selected {
+  background-color: mat-color($mb-accent);
+}
+

@@ -2,5 +2,6 @@
 <div mbSetSizeBucket>
   <mb-rating title="How is your experience with angular?" (valueChange)="onRatingChange($event)"
              [value]="5" [max]="10"></mb-rating>
-  <router-outlet></router-outlet>
+
+  <mb-inclination-bar style="width: 200px" prefix="hello" suffix="world" inclination="right"></mb-inclination-bar>
 </div>
