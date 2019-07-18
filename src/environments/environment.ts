@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://3.92.181.126'
+  apiBaseUrl: 'http://3.92.181.126',
+  sentryUrl: ''
 };
 
 /*

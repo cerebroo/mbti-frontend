@@ -11,6 +11,7 @@ import {SurveyComponent} from './modules/app/components/survey/survey.component'
 import {ResultComponent} from './modules/app/components/result/result.component';
 import {NotFoundComponent} from './modules/app/components/not-found/not-found.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {SentryModule} from './modules/sentry.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     CoreModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SentryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
